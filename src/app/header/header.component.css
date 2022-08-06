@@ -28,7 +28,7 @@ a:hover{
 }
 
 a.logo{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
 }
 
 nav ul{
