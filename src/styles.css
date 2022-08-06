@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+ /* Google Fonts Link  */
+ /* Fredoka  */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Orbitron&display=swap');
+<!-- Poppins -->
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Orbitron&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family:  'Times New Roman', Times, serif;
+    font-size: 20px;
+}
