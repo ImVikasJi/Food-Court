@@ -1,0 +1,42 @@
+header{
+    background-color: white;
+    padding: 0;
+    border-bottom: 1px solid red;
+}
+
+a{
+    color: #af1313;
+}
+
+.logo{
+    /* margin-top: 1em;
+    margin-left: 1em; */
+    padding-top: 1em;
+    padding-left: 1em;
+    justify-content: center;
+}
+
+a:hover{
+    background-color: rgb(161, 9, 9);
+    color: white;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;    
+}
+
+a.logo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li a{
+    padding: 1em;
+    display: inline-block;
+}
