@@ -1,36 +1,53 @@
-<ul >
-    <li *ngFor="let food of foods">
-        <a href="">
-            <img src="{{food.imageUrl}}" alt="food images">
+<ul>
+  <li *ngFor="let food of foods">
+    <a href="">
+      <img src="{{ food.imageUrl }}" alt="food images" />
 
-            <div class="content">
-                <div class="name">
-                    {{food.name}}
-                </div>
-                <span class="favorite {{food.favorite?'':' not'}}">♥</span>
-                <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="24px" [readonly]="true" ></star-rating>
+      <!-- Dish Name -->
+      <div class="content">
+        <div class="name">
+          {{ food.name }}
+        </div>
 
-                <div class="product-item-footer">
+        <!-- Favorite Dish -->
+        <span class="favorite {{ food.favorite ? '' : ' not' }}">♥</span>
 
-                    <!-- Origin of the Dish -->
-                    <div class="origin">
-                        <span *ngFor="let origin of food.origins">
-                            {{origin}}
-                        </span>
-                    </div>
+        <!-- Star Rating -->
+        <div class="star">
+          <star-rating
+            [value]="food.stars"
+            [totalstars]="5"
+            checkedcolor="red"
+            uncheckedcolor="black"
+            size="24px"
+            [readonly]="true"
+          ></star-rating>
+        </div>
 
-                    <!-- Clock Tine -->
-                    <div class="cook-time">
-                        <span>🕐</span>
-                        {{food.cookTime}}
-                    </div>
+        <div class="product-item-footer">
+          <!-- Origin of the Dish -->
+          <div class="origins">
+            <span *ngFor="let origin of food.origins">
+              {{ origin }}
+            </span>
+          </div>
+        </div>
 
-                    <!-- Currency and Price -->
-                    <div class="price">
-                        {{food.price | currency}}
-                    </div>
-                </div>
-            </div>
-        </a>        
-    </li>
+        <!-- Currency and Price -->
+
+        <div class="container">
+            <div class="price">
+          {{ food.price | currency }}
+        </div>
+
+         <!-- Clock Tine -->
+         <div class="cook-time">
+            <span>🕐</span>
+            {{ food.cookTime }}
+          </div>
+        </div>
+        
+      </div>
+    </a>
+  </li>
 </ul>
