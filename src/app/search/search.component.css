@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+div button{
+    background-color: tomato;
+    border: none;
+    color: whitesmoke;
+    opacity: .8;
+}
+
+div button:hover{
+    opacity: 1;
+    cursor: pointer;
+}

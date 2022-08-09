@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
             food.name.toLowerCase().includes(params['searchItem'].toLowerCase())
           );
       } else {
-        this.foods = this.foodSerice.getAll();
+        // this.foods = this.foodSerice.getAll();
       }
     });
     this.foods = this.foodSerice.getAll(); // Get All food images from food Services

@@ -10,20 +10,24 @@ import { Foods } from 'src/app/shared/models/food';
 })
 export class SearchComponent implements OnInit {
   searchItem: string = '';
-  constructor(private route: ActivatedRoute, private router: Router, private foodService: FoodService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private foodService: FoodService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      if (params['searchItem'])
-       this.searchItem = params['searchItem'];
+      if (params['searchItem']) this.searchItem = params['searchItem'];
     });
   }
 
   searchFood(): void {
-    if(this.searchItem){
+    if (this.searchItem) {
       this.router.navigateByUrl('/search/' + this.searchItem);
-    }else{
-      this.router.navigateByUrl('/search/' + 'not-found');
     }
+    // }else{
+    //   this.router.navigateByUrl('/search/' + 'not-found');
+    // }
   }
 }
