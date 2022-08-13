@@ -1,15 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Foods } from 'src/app/shared/models/food';
+import { Tag } from '../../shared/models/Tag';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoodService {
+  constructor() {}
 
-  constructor() { }
+  getAllFoodByTag(tag: string): Foods[] {
+    console.log('Inside getAllFoodByTag');
+    console.log(
+      tag == 'All'
+        ? this.getAll()
+        : this.getAll().filter((food) => food.tags?.includes(tag))
+    );
+    console.log(
+      'Not All ' + this.getAll().filter((food) => food.tags?.includes(tag))
+    );
 
-  getAll():Foods[]{
+    return tag == 'All'
+      ? this.getAll()
+      : this.getAll().filter((food) => food.tags?.includes(tag));
+  }
+  getAllTag():Tag[]{
     return[
+      {name: 'All', count: 8},
+      {name: 'FastFood', count: 6},
+      {name: 'Pizza', count: 4},
+      {name: 'Lunch', count: 5},
+      {name: 'SlowFood', count: 2},
+      {name: 'Hamburger', count: 1},
+      {name: 'Fry', count: 1},
+      {name: 'Soup', count: 1}
+    ]
+  }
+
+  getAll(): Foods[] {
+    return [
       {
         id: 1,
         name: 'Pizza Pepperoni',
@@ -82,7 +110,7 @@ export class FoodService {
         price: 9,
         cookTime: '10-15 minutes',
         favorite: false,
-        origins: ['indian','chinese'],
+        origins: ['indian', 'chinese'],
         stars: 4.0,
         imageUrl: '/assets/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
@@ -93,11 +121,11 @@ export class FoodService {
         price: 9,
         cookTime: '20-30 minutes',
         favorite: false,
-        origins: ['indian','italy'],
+        origins: ['indian', 'italy'],
         stars: 4.0,
         imageUrl: '/assets/food-2.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
-      }
-    ]
+      },
+    ];
   }
 }

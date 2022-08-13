@@ -21,10 +21,12 @@ export class HomeComponent implements OnInit {
           .filter((food) =>
             food.name.toLowerCase().includes(params['searchItem'].toLowerCase())
           );
-      } else {
-        // this.foods = this.foodSerice.getAll();
+      } else if(params['tag']){
+        console.log(params['tag']);        
+        this.foods = this.foodSerice.getAllFoodByTag(params['tag'])
       }
+      else this.foods = this.foodSerice.getAll();
     });
-    this.foods = this.foodSerice.getAll(); // Get All food images from food Services
+  //  this.foods = this.foodSerice.getAll(); // Get All food images from food Services
   }
 }
