@@ -1,0 +1,52 @@
+<div class="container">
+  <img [src]="food.imageUrl" [alt]="food.name" />
+</div>
+
+<div class="details">
+  <div class="header">
+    <span class="name">
+      {{ food.name }}
+    </span>
+    <!-- -------------------------------------------------------------------------Favorite Dish -->
+    <span class="favorite {{ food.favorite ? '' : ' not' }}">♥</span>
+
+    <!-- ------------------------------------------------------------------------ Star Rating -->
+    <div class="star">
+      <star-rating
+        [value]="food.stars"
+        [totalstars]="5"
+        checkedcolor="red"
+        uncheckedcolor="black"
+        size="24px"
+        [readonly]="true"
+      ></star-rating>
+    </div>
+
+    <div class="product-item-footer">
+      <!-- -------------------------------------------------------------------Origin of the Dish -->
+      <div class="origins">
+        <span *ngFor="let origin of food.origins">
+          {{ origin }}
+        </span>
+      </div>
+    </div>
+    <!-- -----------------------------------------------------------------------------------tags -->
+    <div class="tags">
+      <app-tags [foodPageTags]="food.tags"></app-tags>
+    </div>
+
+    <!---------------------------------------------------------------------- Currency and Price -->
+
+    <div class="price">
+      {{ food.price | currency }}
+    </div>
+
+    <!-- Clock Tine -->
+    <div class="cook-time">
+      <span>🕐</span> Time to cook About
+      <strong>{{ food.cookTime }}</strong>
+    </div>
+  </div>
+
+  <button>Add to cart</button>
+</div>
