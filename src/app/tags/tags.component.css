@@ -1,0 +1,19 @@
+div a {
+  padding: 0.1rem 0.5rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 2rem;
+  background-color: whitesmoke;
+  color: rgb(189, 143, 135);
+  font-weight: 600;
+}
+
+div a:hover{
+    background-color: wheat;
+}
+
+div {
+    margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
