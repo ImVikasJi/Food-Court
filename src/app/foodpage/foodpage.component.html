@@ -1,15 +1,19 @@
-<div class="container">
+<app-not-found
+  [visible]="!food"
+  notFoundMessage="Item Not Found"
+  resetLinkText="Go To Home Page"
+></app-not-found>
+<div *ngIf="food" class="container">
   <img [src]="food.imageUrl" [alt]="food.name" />
 
-
-<div class="details">
-  <div class="header">
-    <span class="name">
-      {{ food.name }}
-    </span>
-    <!-- -------------------------------------------------------------------------Favorite Dish -->
-    <span class="favorite {{ food.favorite ? '' : ' not' }}">♥</span>
-</div>
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ food.name }}
+      </span>
+      <!-- -------------------------------------------------------------------------Favorite Dish -->
+      <span class="favorite {{ food.favorite ? '' : ' not' }}">♥</span>
+    </div>
     <!-- ------------------------------------------------------------------------ Star Rating -->
     <div class="star">
       <star-rating
@@ -21,13 +25,13 @@
         [readonly]="true"
       ></star-rating>
     </div>
-      <!-- -------------------------------------------------------------------Origin of the Dish -->
-      <div class="origins">
-        <span *ngFor="let origin of food.origins">
-          {{ origin }}
-        </span>
-      </div>
-   
+    <!-- -------------------------------------------------------------------Origin of the Dish -->
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">
+        {{ origin }}
+      </span>
+    </div>
+
     <!-- -----------------------------------------------------------------------------------tags -->
     <div class="tags">
       <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
@@ -46,6 +50,5 @@
     </div>
 
     <button (click)="addToCart()">Add to cart</button>
-  
-</div>
+  </div>
 </div>
