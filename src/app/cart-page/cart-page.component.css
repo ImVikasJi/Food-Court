@@ -101,3 +101,22 @@ ul .remove-button:hover{
     content: 'Total Price: ';
     color: gray;
 }
+
+.checkout a{
+    padding: 1rem;
+    color: white;
+    background-color: #e72929;
+    border-radius: 1rem;
+    margin-bottom: .1rem;
+
+    display: block;
+    text-align: center;
+    width: 80%;
+    opacity: .7;
+    justify-content: center;
+}
+
+.checkout a:hover{
+    cursor: pointer;
+    opacity: 1;
+}
